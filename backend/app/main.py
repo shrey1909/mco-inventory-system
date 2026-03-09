@@ -5,7 +5,7 @@ from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 
-from app.api import auth_routes, component_routes
+from app.api import auth_routes, component_routes, inventory_routes, lifecycle_routes, reporting_routes
 from app.database.session import get_db
 
 app = FastAPI(title="MCO Inventory System")
@@ -13,6 +13,9 @@ app = FastAPI(title="MCO Inventory System")
 # Include API routers
 app.include_router(auth_routes.router)
 app.include_router(component_routes.router)
+app.include_router(inventory_routes.router)
+app.include_router(lifecycle_routes.router)
+app.include_router(reporting_routes.router)
 
 
 # Root endpoint
