@@ -1,4 +1,43 @@
-# MCO Inventory System – Backend Setup
+# MCO Inventory System
+
+The **MCO (Maintenance Control Officer) Inventory System** is a backend REST API for managing military weapon component inventory. It tracks the full lifecycle of weapons and their parts using a four-level hierarchical model:
+
+```
+Gun → Major Assembly → Sub Assembly → Component
+```
+
+**Example:**
+```
+Gun: AK-47
+ └── Major Assembly: Barrel Assembly
+        └── Sub Assembly: Gas System
+               └── Component: Gas Piston
+```
+
+## Key Features
+
+- **Hierarchical inventory management** — track weapons down to individual replaceable parts
+- **Lifecycle tracking** — monitor the status and history of each component
+- **Audit logging** — record all inventory actions for accountability
+- **Role-based access control** — restrict operations by user role
+- **QR code support** — generate and scan QR codes for components
+- **Reporting** — generate inventory summaries and status reports
+- **Auto-generated API docs** — interactive Swagger UI and ReDoc at `/docs` and `/redoc`
+
+## Tech Stack
+
+| Layer | Technology |
+| --- | --- |
+| Backend Framework | FastAPI |
+| ORM | SQLAlchemy |
+| Database | PostgreSQL (Supabase) |
+| Migration Tool | Alembic |
+| API Server | Uvicorn |
+| Environment Config | python-dotenv |
+
+---
+
+# Backend Setup
 
 This repository contains the backend for the **MCO Inventory Management System**, built with **FastAPI, PostgreSQL, SQLAlchemy, and Alembic**.
 
